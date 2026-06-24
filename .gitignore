@@ -1,0 +1,48 @@
+# Vivado generated directories
+.cache/
+.hw/
+.ip_user_files/
+.sim/
+.Xil/
+*/*/impl_1/
+*/*/synth_1/
+*/*/ila_files/
+
+# Vivado generated files
+*.jou
+*.log
+*.str
+*.mif
+*.xclbin
+*.ltx
+*.dcp
+*.rpt
+*.pb
+*.vds
+*.pdom
+*.wdf
+*.bit
+*.bin
+*.mem
+*.debug_log
+*.tcl.bak
+
+# Vivado backup files
+*.backup.jou
+*.backup.log
+
+# Simulation output
+*.vcd
+*.fst
+*.ghw
+xsim.dir/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
