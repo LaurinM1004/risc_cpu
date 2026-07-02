@@ -3,7 +3,7 @@ import random
 import cocotb
 from cocotb.triggers import Timer
 
-# Spiegel von alu_op_e — Reihenfolge MUSS zum Package passen
+# Mirror from alu_op_e needs to be in right order
 ALU = {"SLL":0,"SLT":1,"SLTU":2,"XOR":3,"OR":4,
        "AND":5,"SRL":6,"SRA":7,"SUB":8,"ADD":9}
 MASK = (1 << 32) - 1
