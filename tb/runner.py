@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 from cocotb_tools.runner import get_runner
 
-
+hex_path = Path(__file__).parent / "imem.hex"
 
 def test_alu():
     root = Path(__file__).resolve().parents[1]
@@ -29,3 +29,18 @@ def test_fetch_stage_runner():
         hdl_toplevel="fetch_stage",
     )
     runner.test(hdl_toplevel="fetch_stage", test_module="tb_fetch_stage")
+
+
+def test_imem_runner():
+    root = Path(__file__).resolve().parents[1]
+
+    runner = get_runner("verilator")
+    runner.build(
+        sources=[
+            root / "src" / "pkg" / "riscv_pkg.sv",
+            root / "src" / "mem" / "imem.sv",
+        ],
+        parameters={"MEM_INIT_FILE": f'"{hex_path}"'},
+        hdl_toplevel="imem",
+    )
+    runner.test(hdl_toplevel="imem", test_module="tb_imem")

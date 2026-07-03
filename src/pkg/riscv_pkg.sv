@@ -1,9 +1,9 @@
 package riscv_pkg;
 
 
-typedef logic [XLEN-1:0] word_t;
+    typedef logic [XLEN-1:0] word_t;
     typedef logic [REG_IDX_WIDTH-1:0] reg_idx_t;
-
+    localparam int INSTR_MEM_DEPTH = 256;
     localparam int XLEN = 32;
     localparam int REG_COUNT = 32;
     localparam int REG_IDX_WIDTH = $clog2(REG_COUNT);
