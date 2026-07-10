@@ -45,6 +45,7 @@ def test_imem_runner():
     )
     runner.test(hdl_toplevel="imem", test_module="tb_imem")
 
+
 def test_regfile_runner():
     root = Path(__file__).resolve().parents[1]
 
@@ -57,3 +58,19 @@ def test_regfile_runner():
         hdl_toplevel="regfile",
     )
     runner.test(hdl_toplevel="regfile", test_module="tb_regfile")
+
+
+def test_decode_stage_runner():
+    root = Path(__file__).resolve().parents[1]
+
+    runner = get_runner("verilator")
+    runner.build(
+        sources=[
+            root / "src" / "pkg" / "riscv_pkg.sv",
+            root / "src" / "core" / "decode" / "regfile.sv",
+            root / "src" / "core" / "decode" / "decode_stage.sv",
+        ],
+        hdl_toplevel="decode_stage",
+    )
+    runner.test(hdl_toplevel="decode_stage", test_module="tb_decode_stage")
+
