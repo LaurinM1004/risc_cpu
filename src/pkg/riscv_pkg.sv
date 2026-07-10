@@ -1,14 +1,14 @@
 package riscv_pkg;
 
 
-    typedef logic [XLEN-1:0] word_t;
-    typedef logic [REG_IDX_WIDTH-1:0] reg_idx_t;
+
     localparam int INSTR_MEM_DEPTH = 256;
     localparam int XLEN = 32;
     localparam int REG_COUNT = 32;
     localparam int REG_IDX_WIDTH = $clog2(REG_COUNT);
+    typedef logic [XLEN-1:0] word_t;
     localparam word_t PC_RESET_VALUE = 32'h0000_0000;
-
+    typedef logic [REG_IDX_WIDTH-1:0] reg_addr_t;
 
 
     //TAKEN FROM https://docs.riscv.org/reference/isa/v20260120/unpriv/rv-32-64g.html
